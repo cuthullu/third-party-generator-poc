@@ -1,0 +1,20 @@
+plugins {
+    id 'java'
+}
+
+group 'com.scottlogic.deg'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    implementation 'com.github.javafaker:javafaker:1.0.1'
+    compile "com.fasterxml.jackson.core:jackson-core:2.9.9"
+    compile "com.fasterxml.jackson.core:jackson-annotations:2.9.9"
+    compile "com.fasterxml.jackson.core:jackson-databind:2.9.9"
+}

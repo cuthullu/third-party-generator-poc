@@ -1,0 +1,28 @@
+{
+  "fields" : [
+    {
+      "name": "name",
+      "type": "name.firstName"
+    },
+    {
+      "name": "family name",
+      "type": "name.lastName"
+    },
+    {
+      "name": "rating",
+      "type": "number.randomDigit"
+    },
+    {
+      "name": "website",
+      "type": "internet.domainName"
+    },
+    {
+      "name": "bigger rating",
+      "type": "#{number.number_between '1','100'}"
+    },
+    {
+      "name": "capital",
+      "type": "country.capital"
+    }
+  ]
+}

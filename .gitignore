@@ -1,0 +1,19 @@
+.idea
+.vscode
+node_modules/
+*.iml
+*.orig
+classes/
+profiler/
+target/
+
+# Eclipse files
+**/*.cache-main
+**/*.cache-tests
+**/*.classpath
+**/*.project
+**/*.settings
+
+# Ignore Gradle project-specific cache directory
+.gradle/
+gradle/
