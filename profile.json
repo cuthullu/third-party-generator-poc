@@ -1,28 +1,44 @@
 {
-  "fields" : [
+  "fields": [
     {
       "name": "name",
-      "type": "name.firstName"
+      "type": "name.firstName",
+      "generator": "FAKER"
     },
     {
       "name": "family name",
-      "type": "name.lastName"
+      "type": "name.lastName",
+      "generator": "FAKER"
     },
     {
       "name": "rating",
-      "type": "number.randomDigit"
+      "type": "number.randomDigit",
+      "generator": "FAKER"
     },
     {
       "name": "website",
-      "type": "internet.domainName"
+      "type": "internet.domainName",
+      "generator": "FAKER"
     },
     {
       "name": "bigger rating",
-      "type": "#{number.number_between '1','100'}"
+      "type": "#{number.number_between '1','100'}",
+      "generator": "FAKER"
     },
     {
       "name": "capital",
-      "type": "country.capital"
+      "type": "country.capital",
+      "generator": "FAKER"
+    },
+    {
+      "name": "Animal",
+      "type": "Animal Common Name",
+      "generator": "MOCKAROO"
+    },
+    {
+      "name": "Geometric Distribution",
+      "type": "Geometric Distribution",
+      "generator": "MOCKAROO"
     }
   ]
 }

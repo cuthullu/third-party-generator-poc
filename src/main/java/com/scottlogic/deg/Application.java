@@ -1,13 +1,16 @@
 package com.scottlogic.deg;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.scottlogic.deg.generators.faker.FakerFieldValueSourceFactory;
 import com.scottlogic.deg.generators.FieldValueSource;
+import com.scottlogic.deg.generators.Generator;
+import com.scottlogic.deg.generators.faker.FakerFieldValueSourceFactory;
+import com.scottlogic.deg.generators.mockaroo.MockarooFieldValueSourceFactory;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Properties;
 import java.util.stream.Collectors;
 
 public class Application {
@@ -17,7 +20,7 @@ public class Application {
 
         List<FieldOutput> outFields = Arrays.stream(p.fields).map(field -> new FieldOutput(
                 field.name,
-                createValueSource(field.type)
+                createValueSource(field)
         )).collect(Collectors.toList());
 
         int MAX_OUT = 100;
@@ -27,7 +30,10 @@ public class Application {
         }
     }
 
-     static FieldValueSource createValueSource(String type) {
-       return FakerFieldValueSourceFactory.createFieldValueSource(type);
-     };
+    static FieldValueSource createValueSource(Field field) {
+        return field.generator == Generator.FAKER ?
+                FakerFieldValueSourceFactory.createFieldValueSource(field.type) :
+                MockarooFieldValueSourceFactory.createFieldValueSource(field);
+    }
+
 }
