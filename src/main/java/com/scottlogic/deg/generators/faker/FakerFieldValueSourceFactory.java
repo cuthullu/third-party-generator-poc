@@ -23,7 +23,7 @@ public class FakerFieldValueSourceFactory {
                 return new FakerFieldValueSource<>(faker -> faker.number().randomDigit());
             default:
                 if(type.matches("#\\{.*}"))
-                    return new FakerFieldValueSource<>(faker -> faker.expression(type));
+                    return new FakerFieldValueSource<>(faker -> faker.expression(type));  // #{number.between "1", "100" name.first_name }
                 return new FakerFieldValueSource<>(faker -> {
                     try {
                         return genericFakerCall(type.split("\\."), faker);
